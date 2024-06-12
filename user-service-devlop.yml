@@ -1,0 +1,25 @@
+server:
+  port: 10001
+
+eureka:
+  client:
+    register-with-eureka: true
+
+spring:
+  application:
+    name: user-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/booker
+    username: ${vault.mysql.id}
+    password: ${vault.mysql.password}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    generate-ddl: false
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: none
+        show_sql: true
+        use_sql_comments: false
+        format_sql: true
