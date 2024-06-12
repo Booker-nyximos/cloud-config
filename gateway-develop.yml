@@ -12,3 +12,9 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761//eureka
+    register-with-eureka: false
