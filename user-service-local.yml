@@ -4,14 +4,15 @@ server:
 eureka:
   client:
     register-with-eureka: true
+    fetch-registry: true
 
 spring:
   application:
     name: user-service
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/booker
-    username: root
-    password: 1010
+    username: ${mysql.id}
+    password: ${mysql.password}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
