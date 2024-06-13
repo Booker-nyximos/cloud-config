@@ -2,6 +2,7 @@ eureka:
   datacenter: seoul
   instance:
     preferIpAddress: true
+    healthCheckUrlPath: /actuator/health  #  Eureka가 엔드포인트를 통해 애플리케이션의 상태를 확인
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
@@ -14,7 +15,6 @@ management:
   endpoint:
     shutdown:
       enabled: true
-      sensitive: false
   endpoints:
     web:
       exposure:
@@ -22,3 +22,9 @@ management:
           - "info"
           - "bus-refresh"
           - "health"
+
+# Additional logging level configuration to aid debugging
+logging:
+  level:
+    org.springframework: DEBUG
+    com.netflix.discovery: DEBUG
