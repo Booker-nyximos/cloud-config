@@ -9,10 +9,15 @@ spring:
   application:
     name: user-service
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/booker
-    username: ${mysql.id}
-    password: ${mysql.password}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      write:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/booker
+        username: ${mysql.user}
+        password: ${mysql.user.password}
+      read:
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/booker
+        username: ${mysql.user}
+        password: ${mysql.user.password}
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     generate-ddl: false
@@ -24,3 +29,4 @@ spring:
         show_sql: true
         use_sql_comments: false
         format_sql: true
+        physical_naming_strategy: com.booker.core.config.jpa.JpaPhysicalNamingStrategy
