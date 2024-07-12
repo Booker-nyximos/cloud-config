@@ -11,12 +11,12 @@ spring:
   datasource:
     hikari:
       write:
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/booker
+        url: jdbc:mysql://127.0.0.1:3306/booker
         username: ${mysql.user}
         password: ${mysql.password}
         driver-class-name: com.mysql.cj.jdbc.Driver
       read:
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/booker
+        url: jdbc:mysql://127.0.0.1:3306/booker
         username: ${mysql.user}
         password: ${mysql.password}
         driver-class-name: com.mysql.cj.jdbc.Driver
