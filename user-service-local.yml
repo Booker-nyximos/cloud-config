@@ -13,7 +13,7 @@ spring:
       write:
         jdbc-url: jdbc:mysql://127.0.0.1:3306/booker
         username: ${mysql.user}
-        password: ${mysql.user.password}
+        password: ${mysql.password}
       read:
         jdbc-url: jdbc:mysql://127.0.0.1:3306/booker
         username: ${mysql.user}
