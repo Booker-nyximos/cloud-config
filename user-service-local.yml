@@ -21,14 +21,16 @@ spring:
         password: ${mysql.password}
         driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    generate-ddl: false
-    open-in-view: false
-    show-sql: true
+    hibernate:
+      ddl-auto: none
+      show-sql: true
+      use-sql-comments: false
+      format-sql: true
+      naming.physical-strategy: com.booker.core.config.jpa.JpaPhysicalNamingStrategy
     properties:
       hibernate:
-        ddl-auto: none
-        show_sql: true
-        use_sql_comments: false
-        format_sql: true
-        physical_naming_strategy: com.booker.core.config.jpa.JpaPhysicalNamingStrategy
+        dialect: org.hibernate.dialect.MySQL8Dialect
+      jakarta:
+        persistence:
+          jdbc:
+            url: jdbc:mysql://127.0.0.1:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
