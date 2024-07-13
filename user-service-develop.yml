@@ -10,7 +10,7 @@ spring:
     name: user-service
   datasource:
     hikari:
-      jdbc-url: jdbc:mysql://127.0.0.1:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/booker?MVCC=TRUE&serverTimezone=UTC&characterEncoding=UTF-8
       username: ${mysql.user}
       password: ${mysql.password}
       driver-class-name: com.mysql.cj.jdbc.Driver
