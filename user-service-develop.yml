@@ -10,16 +10,10 @@ spring:
     name: user-service
   datasource:
     hikari:
-      write:
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
-        username: ${vault.mysql.user}
-        password: ${vault.mysql.password}
-        driver-class-name: com.mysql.cj.jdbc.Driver
-      read:
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
-        username: ${vault.mysql.user}
-        password: ${vault.mysql.password}
-        driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
+      username: ${vault.mysql.user}
+      password: ${vault.mysql.password}
+      driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: none
