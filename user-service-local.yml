@@ -18,7 +18,7 @@ spring:
       read:
         url: jdbc:mysql://127.0.0.1:3306/booker
         username: ${mysql.user}
-        password: ${mysql.user.password}
+        password: ${mysql.password}
         driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
