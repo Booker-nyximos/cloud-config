@@ -26,7 +26,6 @@ spring:
     properties:
       hibernate:
         driverClassName: com.mysql.cj.jdbc.Driver
-        dialect: org.hibernate.dialect.MySQL8Dialect
         connection:
           username: ${mysql.user}
           password: ${mysql.password}
