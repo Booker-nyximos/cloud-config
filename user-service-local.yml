@@ -26,3 +26,8 @@ spring:
       use-sql-comments: false
       format-sql: true
       naming.physical-strategy: com.booker.core.config.jpa.JpaPhysicalNamingStrategy
+    properties:
+      jakarta:
+        persistence:
+          jdbc:
+            url: jdbc:mysql://localhost:3306/booker?&serverTimezone=UTC&characterEncoding=UTF-8
