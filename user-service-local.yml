@@ -14,7 +14,10 @@ spring:
       username: ${mysql.user}
       password: ${mysql.password}
       driver-class-name: com.mysql.cj.jdbc.Driver
-      register-mbeans: true
+      maximum-pool-size: 20
+      connection-timeout: 5000
+      leak-detection-threshold: 3000
+      max-lifetime: 60000
   jpa:
     hibernate:
       ddl-auto: none
