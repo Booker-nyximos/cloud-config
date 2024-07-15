@@ -9,6 +9,10 @@ spring:
   application:
     name: user-service
   datasource:
+    jdbc-url: jdbc:mysql://localhost:3306/booker?&serverTimezone=UTC&characterEncoding=UTF-8
+    username: ${mysql.user}
+    password: ${mysql.password}
+    dialect: org.hibernate.dialect.MySQL8Dialect
     hikari:
       jdbc-url: jdbc:mysql://localhost:3306/booker?&serverTimezone=UTC&characterEncoding=UTF-8
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -23,13 +27,6 @@ spring:
       use-sql-comments: false
       format-sql: true
       naming.physical-strategy: com.booker.core.config.jpa.JpaPhysicalNamingStrategy
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-        jdbc-url: jdbc:mysql://localhost:3306/booker?&serverTimezone=UTC&characterEncoding=UTF-8
-        connection:
-          username: ${mysql.user}
-          password: ${mysql.password}
       jakarta:
         persistence:
           jdbc:
