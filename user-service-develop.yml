@@ -25,6 +25,7 @@ spring:
       naming.physical-strategy: com.booker.core.config.jpa.JpaPhysicalNamingStrategy
     properties:
       hibernate:
+        driverClassName: com.mysql.cj.jdbc.Driver
         dialect: org.hibernate.dialect.MySQL8Dialect
         connection:
           username: ${mysql.user}
