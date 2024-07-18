@@ -9,24 +9,21 @@ spring:
   application:
     name: user-service
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
     username: ${mysql.user}
     password: ${mysql.password}
-    hikari:
-      jdbc-url: jdbc:mysql://localhost:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      maximum-pool-size: 20
-      connection-timeout: 5000
-      leak-detection-threshold: 3000
-      max-lifetime: 60000
   jpa:
     hibernate:
       ddl-auto: none
-      show-sql: true
-      use-sql-comments: false
-      format-sql: true
-      naming.physical-strategy: com.booker.core.config.jpa.JpaPhysicalNamingStrategy
-      jakarta:
-        persistence:
-          jdbc:
-            url: jdbc:mysql://localhost:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+logging:
+  pattern:
+    console: "[%-5level] %d{yy-MM-dd HH:mm:ss} [%logger{0}:%line] - %msg%n"
+  level:
+    org:
+      springframework: DEBUG
