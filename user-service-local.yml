@@ -1,16 +1,12 @@
 server:
   port: 10001
 
-eureka:
-  client:
-    register-with-eureka: true
-
 spring:
   application:
     name: user-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/booker?serverTimezone=UTC&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost:3306/everycare?serverTimezone=UTC&characterEncoding=UTF-8
     username: ${mysql.user}
     password: ${mysql.password}
   jpa:
