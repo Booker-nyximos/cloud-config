@@ -1,0 +1,9 @@
+jwt:
+  prefix: Bearer
+  key: ${jwt.secret}
+  access:
+    expire: 86400000       # 1일 - 1000 * 60 * 60 * 24
+    header: Authorization
+  refresh:
+    expire: 2592000000      # 30 일 - 1000 * 60 * 60 * 24 * 30
+    header: RefreshToken
