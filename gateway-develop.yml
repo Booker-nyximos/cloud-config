@@ -14,6 +14,12 @@ spring:
             - Path=/user/**
           filters:
             - RewritePath=/user(?<segment>/?.*), $\{segment}
+        - id: certificate
+          uri: lb://CERTIFICATE-SERVICE
+          predicates:
+            - Path=/certificate/**
+          filters:
+            - RewritePath=/user(?<segment>/?.*), $\{segment}
 
 eureka:
   client:
